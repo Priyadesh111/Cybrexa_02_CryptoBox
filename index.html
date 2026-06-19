@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoBox - Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Priya Deshmukh</div>
+</header>
+
+<div class="container">
+
+    <h1 class="main-heading">
+        🔐 Password Strength Checker
+    </h1>
+
+    <p class="subtitle">
+        Analyze, Generate and Improve Password Security
+    </p>
+
+    <!-- Password Analysis -->
+
+    <div class="card">
+
+        <h2>Password Analysis</h2>
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+            <button
+                type="button"
+                id="togglePassword"
+                class="icon-btn"
+                title="Show Password"
+            >
+                👁
+            </button>
+
+            <button
+                type="button"
+                id="copyPasswordInput"
+                class="icon-btn"
+                title="Copy Password"
+            >
+                ⧉
+            </button>
+
+        </div>
+
+        <button id="checkPasswordBtn">
+            Check Password
+        </button>
+
+        <div id="strengthText">
+            Strength: -
+        </div>
+
+        <div class="strength-bar">
+            <div id="strengthFill"></div>
+        </div>
+
+        <div id="crackTime">
+            Estimated Crack Time: -
+        </div>
+
+        <div class="checks">
+
+            <p id="lengthCheck">☐ 8 - 32 Characters</p>
+
+            <p id="upperCheck">☐ Uppercase Letter</p>
+
+            <p id="lowerCheck">☐ Lowercase Letter</p>
+
+            <p id="numberCheck">☐ Number</p>
+
+            <p id="symbolCheck">☐ Symbol</p>
+
+        </div>
+
+        <div id="warningMessage"></div>
+
+        <div id="commonResult"></div>
+
+        <p class="security-tip">
+            🔒 Avoid common passwords and predictable patterns such as
+            123123, pass@123, 1122, qwerty, admin, welcome, or personal information.
+        </p>
+
+        <p class="privacy-note">
+            🔐 Your password is checked locally in your browser and is never stored,
+            shared, or transmitted anywhere.
+        </p>
+
+    </div>
+
+    <!-- Password Generator -->
+
+    <div class="card">
+
+        <h2>Strong Password Suggestion</h2>
+
+        <label>
+            Password Length:
+            <span id="lengthValue">16</span>
+        </label>
+
+        <input
+            type="range"
+            id="lengthSlider"
+            min="8"
+            max="32"
+            value="16"
+        >
+
+        <div class="options">
+
+            <label>
+                <input type="checkbox" id="uppercase" checked>
+                Uppercase Letters
+            </label>
+
+            <label>
+                <input type="checkbox" id="lowercase" checked>
+                Lowercase Letters
+            </label>
+
+            <label>
+                <input type="checkbox" id="numbers" checked>
+                Numbers
+            </label>
+
+            <label>
+                <input type="checkbox" id="symbols" checked>
+                Symbols
+            </label>
+
+        </div>
+
+        <button id="suggestBtn">
+            Suggest Strong Password
+        </button>
+
+        <div class="generated-box">
+
+            <input
+                type="text"
+                id="generatedPassword"
+                readonly
+                placeholder="Suggested password will appear here"
+            >
+
+            <button id="copyBtn">
+                ⧉ Copy
+            </button>
+
+        </div>
+
+        <p id="copyMessage"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
